@@ -29,7 +29,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/CLionProjects/anee_bi" />
+    <property name="last_opened_file_path" value="$USER_HOME$/CLionProjects/age_de_lanimal" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -61,6 +61,7 @@
       <option name="presentableId" value="Default" />
       <updated>1583486305804</updated>
       <workItem from="1583486306962" duration="2005000" />
+      <workItem from="1583499196546" duration="4544000" />
     </task>
     <servers />
   </component>
@@ -72,7 +73,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
