@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/pEDRO.PINTO/Documents/GitHub/ICT-431-BatailleNavale_PPO_V2/Code/Bataille_Navale/main.c
+stdio.h
+-
+stdio.h
+-
+windows.h
+-
+
