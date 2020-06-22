@@ -7,8 +7,10 @@
  */
 
 #include <stdio.h>
-#include <stdio.h>
 #include <windows.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
 
 #define SIZE 10
 #define STLC 218 // ┌, Single Top Left Corner
@@ -88,22 +90,22 @@ void play() {
     while (test != 1) {
         //Afficher la grille
         while (bateaux_coules != 4) {
-    topborder(SIZE);
-    for (int row = 0; row < SIZE; row++) {          //Grille
-        if (row > 0)//first line
-        {
-            horizontalborder(SIZE);
+            topborder(SIZE);
+            for (int row = 0; row < SIZE; row++) {          //Grille
+                if (row > 0)//first line
+                {
+                    horizontalborder(SIZE);
 
-        }
-        Verticalborder(SIZE, row);
+                }
+                Verticalborder(SIZE, row);
 
-    }
+            }
 
-    botborder(SIZE);
+            botborder(SIZE);
             char tir[5];
 
 
-            printf("Vos bateaux sont prets faite feu ! ! ! \n donnez-moi vos coordonnees : ");
+            printf("Vos bateaux sont prets faite feu ! ! ! \ndonnez-moi vos coordonnees : ");
             scanf("%s", &tir);
             int col = tir[0] - 65;
             int row = tir[1] - 48;
@@ -140,8 +142,6 @@ void play() {
                                 grille[x][y] = bateau + 20;
 
                                 bateaux_coules++;
-                                printf("\nBateaux coules : %d", bateaux_coules);
-
                             }
                         }
                     }
@@ -152,15 +152,62 @@ void play() {
 }
 
 
-
-
 int main() {
-    int grille;
-    int vertical;
-    int bot;
-    int horizon;
-    int top;
+    int choix;
+    char pseudo[100];
+    int valid;
+    printf("  ____        _        _ _ _        _   _                  _       \n"
+           " |  _ \\      | |      (_) | |      | \\ | |                | |      \n"
+           " | |_) | __ _| |_ __ _ _| | | ___  |  \\| | __ ___   ____ _| | ___  \n"
+           " |  _ < / _` | __/ _` | | | |/ _ \\ | . ` |/ _` \\ \\ / / _` | |/ _ \\ \n"
+           " | |_) | (_| | || (_| | | | |  __/ | |\\  | (_| |\\ V / (_| | |  __/ \n"
+           " |____/ \\__,_|\\__\\__,_|_|_|_|\\___| |_| \\_|\\__,_| \\_/ \\__,_|_|\\___| \n"
+           " -------------------------------------------------------------------                                                ");
+    printf("\n\nBienvenu dans le jeu de la bataille navale");
+    printf("\ncommencez apr entrer votre pseudo : ");
+    scanf("%s", pseudo);
+    printf("\nBonjour %s Maintenant tu dois choisir l'une des options du menu\n\n");
+    printf("  __  __ ______ _   _ _    _ \n"
+           " |  \\/  |  ____| \\ | | |  | |\n"
+           " | \\  / | |__  |  \\| | |  | |\n"
+           " | |\\/| |  __| | . ` | |  | |\n"
+           " | |  | | |____| |\\  | |__| |\n"
+           " |_|  |_|______|_| \\_|\\____/\n -------------------------");
 
-    play();
+    do {
+        printf("\n1 : Jouer\n2 : Regles\n3 : Scores\n9 : Quitter");
+        fflush(stdin);
+        scanf("%d",&choix);
+        switch (choix) {
+            valid = 0;
+            case 1:
+                play();
+                break;
+            case 2:
+                printf("\nRegle de la Bataille navale\n"
+                       "On vous proposera une grille de jeu numerotee de 1 a 10 horizontalement et\nde A a J verticalement avec les bateaux suivants deja places.\n"
+                       "1 croiseur (4 cases)\n"
+                       "1 contre-torpilleur (3 cases)\n"
+                       "1 torpilleur (2 cases)\n"
+                       "1 porte-avions (5 cases)\n");
+                printf("Vous devez a present tirer sur la grille adverse et tenter de toucher les bateaux");
+                printf("Le premier joueur a eliminer tout les bateaux adverses gagne le combat");
+                printf("Voici une video explicative : https://www.youtube.com/watch?v=klO6vPWPkzE\n");
+                printf("Tous a vos postes de COMBAT!!\n\n");
+                break;
+            case 3:
+                printf("\nComming soon\n");
+                break;
+            case 9:
+                printf("\nFin du programe\n");
+                break;
+            default:
+                printf("\nValeur invalide ! ! !\n");
+                valid = 1;
+                break;
+        }
+    } while (valid == 1);
+
+    system("Pause");
+    return main();
 }
-
